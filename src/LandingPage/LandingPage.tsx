@@ -1,16 +1,24 @@
-import React, { useState } from "react";
-import { LAND_IMAGES1, LAND_IMAGES2 } from "./images";
-import { FaInstagramSquare } from "react-icons/fa";
+import React, { useEffect, useRef, useState } from "react";
+import { FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
+import { LAND_IMAGES1, LAND_IMAGES2 } from "../images";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
+  const navigate = useNavigate();
+  const { state } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const myRef = useRef<null | HTMLDivElement>(null);
+  const executeScroll = () =>
+    myRef.current?.scrollIntoView({ behavior: "smooth" });
 
+  useEffect(() => {
+    if (state?.scroll === "leads") {
+      executeScroll();
+    }
+  });
   return (
     <div style={{ width: "100vw" }} className="min-h-screen bg-white">
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
@@ -22,18 +30,28 @@ const LandingPage: React.FC = () => {
           TAPP!
         </div>
         <nav className="hidden lg:flex space-x-6">
-          <a href="#" className="text-gray-600 hover:text-gray-900">
+          <div
+            style={{ cursor: "pointer" }}
+            onClick={executeScroll}
+            className="text-gray-600 hover:text-gray-900"
+          >
             Products
-          </a>
-          <a
-            href="https://tappglobal.usetiful.help/"
+          </div>
+          <div
+            style={{ cursor: "pointer" }}
+            onClick={() =>
+              window.open("https://tappglobal.usetiful.help/", "_self")
+            }
             className="text-gray-600 hover:text-gray-900"
           >
             Resources
-          </a>
-          <a href="#" className="text-gray-600 hover:text-gray-900">
+          </div>
+          <div
+            style={{ cursor: "pointer" }}
+            className="text-gray-600 hover:text-gray-900"
+          >
             Blog
-          </a>
+          </div>
         </nav>
         <div className="hidden lg:flex space-x-4">
           <button
@@ -77,18 +95,27 @@ const LandingPage: React.FC = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white py-4">
           <nav className="flex flex-col items-center space-y-4">
-            <a href="#" className="text-gray-600 hover:text-gray-900">
-              Our Products
-            </a>
-            <a
-              href="https://tappglobal.usetiful.help/"
+            <div
+              onClick={executeScroll}
+              className="text-gray-600 hover:text-gray-900"
+            >
+              Products
+            </div>
+            <div
+              style={{ cursor: "pointer" }}
+              onClick={() =>
+                window.open("https://tappglobal.usetiful.help/", "_self")
+              }
               className="text-gray-600 hover:text-gray-900"
             >
               Resources
-            </a>
-            <a href="#" className="text-gray-600 hover:text-gray-900">
+            </div>
+            <div
+              style={{ cursor: "pointer" }}
+              className="text-gray-600 hover:text-gray-900"
+            >
               Blog
-            </a>
+            </div>
             <button
               onClick={() => {
                 window.open("https://dash.tappglobal.app", "_self");
@@ -168,7 +195,7 @@ const LandingPage: React.FC = () => {
         </div>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-4">
+          <h2 ref={myRef} className="text-3xl font-bold text-center mb-4">
             Leads Management
           </h2>
           <p className="text-center text-gray-600 mb-8">
@@ -267,24 +294,27 @@ const LandingPage: React.FC = () => {
               </div>
             </div>
             <div className="flex space-x-4">
-              <a
-                href="https://www.tappglobal.app/terms-and-conditions"
+              <div
+                onClick={() => navigate("/tnc")}
+                style={{ cursor: "pointer" }}
                 className="text-sm text-gray-600 hover:text-gray-900"
               >
                 Terms & Conditions
-              </a>
-              <a
-                href="https://www.tappglobal.app/privacy-policy"
+              </div>
+              <div
+                onClick={() => navigate("/policyPrivacy")}
+                style={{ cursor: "pointer" }}
                 className="text-sm text-gray-600 hover:text-gray-900"
               >
                 Privacy Policy
-              </a>
-              <a
-                href="https://www.tappglobal.app/return-and-refund-policy"
+              </div>
+              <div
+                onClick={() => navigate("/refundPolicy")}
+                style={{ cursor: "pointer" }}
                 className="text-sm text-gray-600 hover:text-gray-900"
               >
                 Refund/Refund Policy
-              </a>
+              </div>
             </div>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <div
