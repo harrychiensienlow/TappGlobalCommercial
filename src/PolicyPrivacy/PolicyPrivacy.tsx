@@ -10,7 +10,10 @@ const PrivacyPolicy: FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div
+      style={{ width: "100vw" }}
+      className="min-h-screen flex flex-col bg-white"
+    >
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div
           onClick={() => window.open("https://tappglobal.app", "_self")}
