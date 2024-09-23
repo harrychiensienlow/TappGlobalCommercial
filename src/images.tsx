@@ -12,3 +12,9 @@ export const LAND_IMAGES2 = [
   new URL("@/assets/avatar8.png", import.meta.url).href,
   new URL("@/assets/avatar9.png", import.meta.url).href,
 ];
+
+export const BG1 = [
+  new URL("@/assets/bg1.webp", import.meta.url).href,
+  new URL("@/assets/bg2.webp", import.meta.url).href,
+  new URL("@/assets/bg3.webp", import.meta.url).href,
+];
