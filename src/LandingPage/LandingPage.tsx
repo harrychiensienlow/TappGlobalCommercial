@@ -74,13 +74,12 @@ const LandingPage: React.FC = () => {
             Get Started Free
           </button>
         </div>
-        <button onClick={toggleMenu} className="lg:hidden">
+        <button onClick={toggleMenu} className="lg:hidden bg-gray-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
+            className="h-6 w-6 fill-slate-600"
             viewBox="0 0 24 24"
-            stroke="currentColor"
+            stroke="black"
           >
             <path
               strokeLinecap="round"
@@ -120,7 +119,7 @@ const LandingPage: React.FC = () => {
               onClick={() => {
                 window.open("https://dash.tappglobal.app", "_self");
               }}
-              className="text-gray-600 hover:text-gray-900"
+              className="text-gray-00 hover:text-gray-900 bg-gray-100"
             >
               Login
             </button>
