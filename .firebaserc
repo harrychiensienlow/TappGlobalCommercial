@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "tappglobalcommercial-staging"
-  }
+    "default": "tappglobalcommercial"
+  },
+  "targets": {},
+  "etags": {}
 }

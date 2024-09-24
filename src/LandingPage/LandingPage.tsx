@@ -24,7 +24,7 @@ const LandingPage: React.FC = () => {
       <header className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div
           onClick={() => window.open("https://tappglobal.app", "_self")}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", color: "black" }}
           className="text-2xl font-bold"
         >
           TAPP!
@@ -156,7 +156,7 @@ const LandingPage: React.FC = () => {
             <span className="ml-2 text-gray-600">100+ with us today</span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="text-black text-4xl md:text-5xl font-bold mb-4">
             Simplify Your B2B
             <br />
             Sales Process
@@ -195,7 +195,10 @@ const LandingPage: React.FC = () => {
         </div>
 
         <section className="mb-16">
-          <h2 ref={myRef} className="text-3xl font-bold text-center mb-4">
+          <h2
+            ref={myRef}
+            className="text-black text-3xl font-bold text-center mb-4"
+          >
             Leads Management
           </h2>
           <p className="text-center text-gray-600 mb-8">
@@ -214,7 +217,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-4">
+          <h2 className="text-black text-3xl font-bold text-center mb-4">
             Relevant Insights
           </h2>
           <p className="text-center text-gray-600 mb-8">
@@ -233,7 +236,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-4">
+          <h2 className="text-black text-3xl font-bold text-center mb-4">
             Find Warm Introducer
           </h2>
           <p className="text-center text-gray-600 mb-8">
@@ -252,7 +255,7 @@ const LandingPage: React.FC = () => {
         </section>
 
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4">
+          <h2 className="text-black text-3xl font-bold mb-4">
             Ready to close more sales?
           </h2>
           <button
